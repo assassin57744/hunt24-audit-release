@@ -477,7 +477,7 @@ CLUSTERS = {
         # 🌟 核心算法路由策略集成
         "DISAMBIGUATION_MODE": "bayesian_gmm",   # 老疏散星团，强噪声对抗
         "SUBSTRUCTURE_MODE": "dual_comp",        # 守护并剥离长期演化遗留的潮汐尾
-        "CLUSTER_ALGO": "hdbscan",
+        "CLUSTER_ALGO": "dbscan",
         "DBSCAN_EPS": "auto",                    
         "DBSCAN_MIN_SAMPLES": 20,
         "hdbscan_min_cluster_size": 20,
@@ -1118,7 +1118,7 @@ GMM_CONFIG = {
     },
     "dim_mode": "5d_h",
     "ruwe_limit": 1.4,
-    "cluster_algo": "dbscan", # 可选: dbscan, hdbscan
+    # "cluster_algo": "hdbscan", # 可选: dbscan, hdbscan
     "DBSCAN_EPS": 0.3,  # 从 0.3 调大，补偿高维空间距离
     "DBSCAN_MIN_SAMPLES": 9,  # 自适应eps算法缺省值
     "hdbscan_min_cluster_size": 10,
