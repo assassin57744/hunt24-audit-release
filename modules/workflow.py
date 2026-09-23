@@ -834,6 +834,7 @@ class AstroWorkflow:
         cluster_cfg = cfg.CLUSTERS[ctx.cluster_id].copy()
         cluster_cfg["id"] = ctx.cluster_id
         cluster_cfg["dim_mode"] = ctx.feature_space
+        cluster_cfg["cluster_algo"] = ctx.algorithm
 
         engine = PriorGMM(config=cluster_cfg)
         model_params = engine.fit(df_seeds_final, df_target_final)
@@ -864,6 +865,7 @@ class AstroWorkflow:
 
         cluster_cfg = cfg.CLUSTERS[ctx.cluster_id.upper()].copy()
         cluster_cfg["id"] = ctx.cluster_id
+        cluster_cfg["cluster_algo"] = ctx.algorithm
         extractor = ClusterSeedExtractor(cluster_profile=cluster_cfg)
         df_seeds_core = extractor.extract_seeds(
             seed_field_df=df_seeds,
@@ -951,6 +953,7 @@ class AstroWorkflow:
             .get(strategy_name, {})
         )
         strategy_kwargs = {**strategy_params}
+        strategy_kwargs["cluster_algo"] = ctx.algorithm
         strategy_kwargs.setdefault("spatial_cols", ["l", "b"])
         strategy_kwargs.setdefault("scale_col", "plx")
 
