@@ -27,7 +27,7 @@ class BayesianGmmDisambiguation(BaseDisambiguation):
 
     def __init__(
         self,
-        cluster_algo: str = "dbscan",
+        cluster_algo: str = "hdbscan",
         dbscan_eps: float = 0.3,
         dbscan_min_samples: int = 100,
         hdbscan_min_cluster_size: int = 15,

@@ -20,7 +20,7 @@ def _resolve_checkpoint_keys(self, args):
         getattr(self, "target_cluster", "m45").lower(),
         getattr(self, "target_category", "hunt").lower(),
         getattr(self, "feature_space", "5d").lower(),
-        getattr(self, "algo", "dbscan").lower(),
+        getattr(self, "algo", "hdbscan").lower(),
     )
 
 

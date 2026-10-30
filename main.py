@@ -107,7 +107,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--algo",
         type=str,
-        default=cfg.GMM_CONFIG.get("cluster_algo", "dbscan"),
+        default=cfg.GMM_CONFIG.get("cluster_algo", "hdbscan"),
         choices=["dbscan", "hdbscan"],
         help="种子集预处理使用的聚类算法",
     )

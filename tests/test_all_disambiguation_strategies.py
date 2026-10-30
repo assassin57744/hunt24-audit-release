@@ -104,7 +104,7 @@ def run_pipeline_integration():
     # --------------------------------==================--------------------------------
     logger.info("\n🛰️ [策略 1 演练] 初始化 Bayesian 极大似然洗涤算子...")
     strategy_bayesian = BayesianGmmDisambiguation(
-        cluster_algo="dbscan", dbscan_eps=0.3, dbscan_min_samples=5, tol=1e-6
+        cluster_algo="hdbscan", dbscan_eps=0.3, dbscan_min_samples=5, tol=1e-6
     )
     res_bayesian = strategy_bayesian.fit_predict(df_all, df_seeds, test_features)
     

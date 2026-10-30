@@ -1918,7 +1918,7 @@ class AstroWorkflow:
                 cluster=cluster.lower(),
                 category=r.get("category", "hunt"),
                 feature_space=r.get("mode", "5d_h").lower(),
-                algo=r.get("algo", "dbscan").lower(),
+                algo=r.get("algo", "hdbscan").lower(),
             )
             exists = self.db.con.execute(
                 "SELECT 1 FROM information_schema.tables WHERE table_name = ?", [tbl]

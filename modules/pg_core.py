@@ -74,7 +74,7 @@ class PriorGMM:
         self.features = feature_map[self.feature_space]
 
         # 提取聚类超参数
-        self.cluster_algo = self.config.get("cluster_algo", "dbscan").lower()
+        self.cluster_algo = self.config.get("cluster_algo", "hdbscan").lower()
         self.dbscan_eps = self.config.get("DBSCAN_EPS", 0.3)
         self.dbscan_min_samples = self.config.get("DBSCAN_MIN_SAMPLES", 10)
         self.hdbscan_min_cluster_size = self.config.get("hdbscan_min_cluster_size", 15)

@@ -102,7 +102,7 @@ def run_stage1_pipeline_test(cluster_key: str):
     
     # 100% 映射 config.py 中的参数字段初始化贝叶斯洗涤器
     disambiguator = BayesianGmmDisambiguation(
-        cluster_algo=profile.get("cluster_algo", "dbscan"),
+        cluster_algo=profile.get("cluster_algo", "hdbscan"),
         dbscan_eps=0.3, # 贝叶斯内部二次修剪硬编码半径
         dbscan_min_samples=profile.get("dbscan_min_samples", 9),
         hdbscan_min_cluster_size=profile.get("hdbscan_min_cluster_size", 15),

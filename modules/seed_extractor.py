@@ -42,7 +42,7 @@ class ClusterSeedExtractor:
 
         # 1. 严格映射 config.py 中的 "cluster_algo" 字段
         self.cluster_algo = str(
-            profile.get("CLUSTER_ALGO", kwargs.get("CLUSTER_ALGO", "dbscan"))
+            profile.get("CLUSTER_ALGO", kwargs.get("CLUSTER_ALGO", "hdbscan"))
         ).lower()
 
         # 2. 严格映射 config.py 中的 "dbscan_eps" 字段（支持 "auto" 或 浮点数）
