@@ -212,8 +212,7 @@ CLUSTERS = {
         "ID_NAME": "melotte_22",
         "CAT_NAME": "Melotte_22",
         "ISO_FILE": "pleiades_126myr.dat",
-        # ↓ source ↓ : gemini
-        # "CENTER_RA": 56.75, "CENTER_DEC": 24.12, "RADIUS": 17.78,
+
         # ↓ source ↓ : 基于hunt24的星团成员的均值
         # "CENTER_RA": 56.61398997432307, "CENTER_DEC": 24.09029596042996, "RADIUS": 17.78,
         # ↓ source ↓ : https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=melotte_22&submit=SIMBAD+search
@@ -233,8 +232,7 @@ CLUSTERS = {
         "DISTANCE_MODULUS": 5.66,
         "EXT_AG": 0.12,  # Gaia G波段消光
         "E_BP_RP": 0.06,  # 对应色余 E(BP-RP)
-        # ↓ source: gemini
-        # "PLX_REF": 7.33, "PMRA_REF": 20.10, "PMDEC_REF": -45.40,
+
         # ↓ source: 基于hunt24的星团成员的均值
         # "PLX_REF": 7.329881851789656, "PMRA_REF": 19.816076644561296, "PMDEC_REF": -45.02481613280063,   
         # ↓ source: https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=melotte_22&submit=SIMBAD+search
@@ -242,8 +240,7 @@ CLUSTERS = {
         "PLX_ERROR": 0.512,  # 视差误差容忍度 (mas)        
         "PMRA_DISPERSION": 1.5, "PMDEC_DISPERSION": 1.2, # 自行空间分散度 (mas/yr), 非 3d_v/6d_p 模式下生效
         "PM_RADIUS": 3.0,  # 自行空间容忍度 (mas/yr)，source: Hunt2024 Figure 3 分布范围
-        # source: gemini
-        # "RV_REF": 5.63,     
+  
         # ↓ source ↓ : https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=melotte_22&submit=SIMBAD+search
         # https://simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2021A%26A...647A..19T
         "RV_REF": 5.88,     
