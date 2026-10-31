@@ -45,7 +45,7 @@ def query_gaia_star_full_info(gaia_dr3_id):
 
 def run_pleiades_verification():
     # --- 配置与路径 ---
-    module_base = "D:/git/repo/Alapha/astro_research/modules/db/"
+    module_base = "./modules/db/"
     dirs = {
         "warehouse": os.path.join(module_base, "warehouse"),
     }

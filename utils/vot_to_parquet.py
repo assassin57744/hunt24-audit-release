@@ -29,7 +29,7 @@ def votable_to_parquet(vot_path, parquet_path):
 
 if __name__ == "__main__":
     # 示例调用（换成你的实际路径）
-    vot_path = "D:/git/repo/Alapha/cluster_audit/data/raw/vizier/zerj23.vot"
-    parquet_path = "D:/git/repo/Alapha/cluster_audit/data/raw/vizier/processed/zerj23.parquet"
+    vot_path = "./data/raw/vizier/zerj23.vot"
+    parquet_path = "./data/raw/vizier/processed/zerj23.parquet"
     votable_to_parquet(vot_path, parquet_path)
     

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # 1. 读取 CSV
 # ============================================================
 
-csv_file = r"D:\git\astro-research\research\hunt24-audit\analysis\M67\m67_full.csv"
+csv_file = r".\analysis\M67\m67_full.csv"
 df = pd.read_csv(csv_file)
 
 
@@ -129,7 +129,7 @@ plt.tight_layout()
 
 # 保存图片
 plt.savefig(
-    r"D:\git\astro-research\research\hunt24-audit\analysis\parallax_error_vs_gmag.pdf",
+    r".\analysis\parallax_error_vs_gmag.pdf",
     dpi=300,
     bbox_inches="tight"
 )

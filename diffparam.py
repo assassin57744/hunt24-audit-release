@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 # ============================================================
 
 csv_files = [
-    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_10.csv",
-    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_20.csv",
-    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_40.csv",
-    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_80.csv",
+    r".\analysis\M44\different_parameter\seed_10.csv",
+    r".\analysis\M44\different_parameter\seed_20.csv",
+    r".\analysis\M44\different_parameter\seed_40.csv",
+    r".\analysis\M44\different_parameter\seed_80.csv",
 ]
 
 # 根据你的实际列名修改
@@ -279,7 +279,7 @@ plt.tight_layout()
 # ============================================================
 
 plt.savefig(
-    r"D:\git\astro-research\research\hunt24-audit\analysis\ra_dec_repeated_unique.pdf",
+    r".\analysis\ra_dec_repeated_unique.pdf",
     dpi=300,
     bbox_inches="tight"
 )
