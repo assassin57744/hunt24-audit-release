@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 # ============================================================
 
 csv_files = [
-    r"D:\git\astro-research\research\hunt24-audit\analysis\M44\different_parameter\seed_10.csv",
-    r"D:\git\astro-research\research\hunt24-audit\analysis\M44\different_parameter\seed_20.csv",
-    r"D:\git\astro-research\research\hunt24-audit\analysis\M44\different_parameter\seed_40.csv",
-    r"D:\git\astro-research\research\hunt24-audit\analysis\M44\different_parameter\seed_80.csv",
+    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_10.csv",
+    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_20.csv",
+    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_40.csv",
+    r".\research\hunt24-audit\analysis\M44\different_parameter\seed_80.csv",
 ]
 
 # 根据你的实际列名修改
