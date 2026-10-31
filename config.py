@@ -246,7 +246,7 @@ CLUSTERS = {
         # "RV_REF": 5.63,     
         # ↓ source ↓ : https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=melotte_22&submit=SIMBAD+search
         # https://simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2021A%26A...647A..19T
-        "RV_REF": 5.88,     # source: gemini
+        "RV_REF": 5.88,     
         "RV_ERROR": 5.0, # 视向速度容忍度 (km/s)        
         "UVW_REF": np.array([-6.05, -28.02, -14.34]),
         "UVW_ERROR": 2.0,  # 速度空间容忍度 (km/s)
