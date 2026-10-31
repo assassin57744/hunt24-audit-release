@@ -254,6 +254,12 @@ def main() -> None:
         return
 
     # 2. 准备管线参数
+    if not args.cluster:
+        logger.error("❌ [System] 未指定目标星团。用法: python main.py <cluster> [选项]")
+        logger.info(f"💡 [System] 可选星团: {list(cfg.CLUSTERS.keys())}，或 all；逗号分隔多个，如 M44,M41")
+        logger.info("💡 [System] 查看完整帮助: python main.py -h")
+        sys.exit(1)
+
     target_cluster_ids = []
     if args.cluster.lower() == "all":
         target_cluster_ids = list(cfg.CLUSTERS.keys())
