@@ -218,48 +218,44 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-research/hunt24-audit_bak/
-
 
 # data 目录整体忽略，仅保留 gaia_archive / vizier 下的 README.md（数据文件见 Release 附件）
-research/hunt24-audit/data/*
-!research/hunt24-audit/data/raw/
-research/hunt24-audit/data/raw/*
-!research/hunt24-audit/data/raw/gaia_archive/
-!research/hunt24-audit/data/raw/vizier/
-research/hunt24-audit/data/raw/gaia_archive/*
-research/hunt24-audit/data/raw/vizier/*
-!research/hunt24-audit/data/raw/gaia_archive/README.md
-!research/hunt24-audit/data/raw/vizier/README.md
-research/hunt24-audit/logs/
-research/hunt24-audit/analysis/
-research/hunt24-audit/notes/
-research/hunt24-audit/modules/astro_db_new.py
-research/hunt24-audit/modules/-tmp*.py
-research/hunt24-audit/NOTES.md
+data/*
+!data/raw/
+data/raw/*
+!data/raw/gaia_archive/
+!data/raw/vizier/
+data/raw/gaia_archive/*
+data/raw/vizier/*
+!data/raw/gaia_archive/README.md
+!data/raw/vizier/README.md
+img/
+logs/
 
-research/hunt24-audit/modules/-operators_bak.py
-research/hunt24-audit/modules/-schema_aligner_tmp_del.py
-# research/hunt24-audit/modules/operators.py
-# research/hunt24-audit/modules/schema_aligner.py
+analysis/
+notes/
 
-# 彻底屏蔽根目录下的 NOTES.md 及任何敏感信息备份
-NOTES.md
+modules/astro_db_new.py
+modules/-tmp*.py
+modules/-operators_bak.py
+modules/-schema_aligner_tmp_del.py
+# modules/operators.py
+# modules/schema_aligner.py
+
 
 # 排除大型外部工具和二进制文件
 tools/external/
-research/hunt24-audit-backup/
+tools/topcat/
+tools/stilts/
 
 *.zip
 *.pdf
-
 *.backup
 
-tools/topcat/
-tools/stilts/
-research/hunt24-audit/utils/pyGaia.ipynb
 
-# research/hunt24-audit/README.md
+utils/pyGaia.ipynb
+
+# README.md
 
 .claude/
 .codeartsdoer/
