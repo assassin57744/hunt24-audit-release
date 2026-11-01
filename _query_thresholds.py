@@ -1,8 +1,8 @@
 import duckdb
 
 dbs = [
-    "research/hunt24-audit/data/warehouse/astro_research.db",
-    "research/hunt24-audit/data/warehouse/astrodb_internal.db",
+    "./data/warehouse/astro_research.db",
+    "./data/warehouse/astrodb_internal.db",
 ]
 
 for db_path in dbs:

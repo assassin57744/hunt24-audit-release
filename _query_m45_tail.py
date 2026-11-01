@@ -3,8 +3,8 @@ import duckdb
 import numpy as np
 
 for db_path in [
-    "research/hunt24-audit/data/warehouse/astro_research.db",
-    "research/hunt24-audit/data/warehouse/astrodb_internal.db",
+    "./data/warehouse/astro_research.db",
+    "./data/warehouse/astrodb_internal.db",
 ]:
     con = duckdb.connect(db_path)
     tables = con.execute(

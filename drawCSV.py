@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 # 1. FITS 文件路径
 # ============================================================
 
-fits_file_1 = r".\research\hunt24-audit\data\raw\gaia_archive\gaiadr3_m45_wide.fits"
-fits_file_2 = r".\research\hunt24-audit\data\raw\gaia_archive\gaiadr3_m45_background.fits"
+fits_file_1 = r"./data/raw/gaia_archive/gaiadr3_m45_wide.fits"
+fits_file_2 = r"./data/raw/gaia_archive/gaiadr3_m45_background.fits"
 
 # ============================================================
 # 2. 读取 FITS
@@ -152,7 +152,7 @@ plt.gca().invert_xaxis()
 plt.tight_layout()
 
 plt.savefig(
-    r".\research\hunt24-audit\analysis\fieldbg.png",
+    r"./research/hunt24-audit/analysis/fieldbg.png",
     dpi=300,
     bbox_inches="tight"
 )

@@ -2,7 +2,7 @@
 import duckdb
 import numpy as np
 
-con = duckdb.connect("research/hunt24-audit/data/warehouse/astrodb_internal.db", read_only=True)
+con = duckdb.connect("./data/warehouse/astrodb_internal.db", read_only=True)
 
 for cluster in ["m45", "m41", "m67"]:
     tables = con.execute(
