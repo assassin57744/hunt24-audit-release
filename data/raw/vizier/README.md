@@ -5,7 +5,8 @@
 > They total about 460 MB, and `vizier_hunt24_full.parquet` alone is about 410 MB, which exceeds GitHub's repository file size limit. They are distributed as release attachments instead.
 > Before running the pipeline, **download the data attachments from the GitHub Releases page** and extract them into this directory, keeping the file names shown below:
 >
-> 👉 <https://github.com/assassin57744/astro-research/releases>
+> 👉 <https://github.com/assassin57744/hunt24-audit-release/releases>
+
 >
 > Download the attachments from the release that matches the code version you are using (the `public-hunt24-audit-vX.Y.Z` tag).
 
