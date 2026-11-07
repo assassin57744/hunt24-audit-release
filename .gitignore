@@ -219,7 +219,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 
-# data 目录整体忽略，仅保留 gaia_archive / vizier 下的 README.md（数据文件见 Release 附件）
+# data 目录整体忽略，仅保留 gaia_archive / vizier 下的 README.md（数据文件见公开仓库 hunt24-audit-release 的 data-v1 Release 附件）
 data/*
 !data/raw/
 data/raw/*

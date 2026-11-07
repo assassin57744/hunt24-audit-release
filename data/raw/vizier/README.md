@@ -3,12 +3,11 @@
 > ⚠️ **The data files in this directory are not included in the Git repository.**
 >
 > They total about 460 MB, and `vizier_hunt24_full.parquet` alone is about 410 MB, which exceeds GitHub's repository file size limit. They are distributed as release attachments instead.
-> Before running the pipeline, **download the data attachments from the GitHub Releases page** and extract them into this directory, keeping the file names shown below:
+> Before running the pipeline, **download the data attachments from the `data-v1` release** and extract them into this directory, keeping the file names shown below:
 >
-> 👉 <https://github.com/assassin57744/hunt24-audit-release/releases>
-
+> 👉 <https://github.com/assassin57744/hunt24-audit-release/releases/tag/data-v1>
 >
-> Download the attachments from the release that matches the code version you are using (the `public-hunt24-audit-vX.Y.Z` tag).
+> The data are published once, in a separate data release, and are shared by all code releases (`public-hunt24-audit-vX.Y.Z`). Code releases do not carry data attachments. `data-v1` is used by `public-hunt24-audit-v1.0.0` and later; if the data change, a new data release (`data-v2`, …) will be published and noted here.
 
 The pipeline reads this directory through `VIZIER_INPUT_DIR` in `config.py` (i.e. `data/raw/vizier/`). These catalogs are the external literature membership tables that the audit compares against.
 

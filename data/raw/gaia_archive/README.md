@@ -3,11 +3,11 @@
 > ⚠️ **The data files in this directory are not included in the Git repository.**
 >
 > They total about 6 GB, and the largest single file is about 1.6 GB, which exceeds GitHub's repository file size limit. They are distributed as release attachments instead.
-> Before running the pipeline, **download the data attachments from the GitHub Releases page** and extract them into this directory, keeping the file names and layout shown below:
+> Before running the pipeline, **download the data attachments from the `data-v1` release** and extract them into this directory, keeping the file names and layout shown below:
 >
-> 👉 <https://github.com/assassin57744/hunt24-audit-release/releases>
+> 👉 <https://github.com/assassin57744/hunt24-audit-release/releases/tag/data-v1>
 >
-> Download the attachments from the release that matches the code version you are using (the `public-hunt24-audit-vX.Y.Z` tag).
+> The data are published once, in a separate data release, and are shared by all code releases (`public-hunt24-audit-vX.Y.Z`). Code releases do not carry data attachments. `data-v1` is used by `public-hunt24-audit-v1.0.0` and later; if the data change, a new data release (`data-v2`, …) will be published and noted here.
 
 The pipeline reads this directory through `GAIA_INPUT_DIR` in `config.py` (i.e. `data/raw/gaia_archive/`).
 
@@ -63,6 +63,6 @@ gaia_archive/
 
 - **Required files**: `*_wide.fits`, `*_background.fits`, `gaia_gaiadr3_dr2_neighbourhood_Melotte_22_r*.fits` and `*_pyUPMASK.csv`. Without them, the analysis for the corresponding cluster cannot run.
 - **Optional files**: `*_wide.parquet` and the `no_errors/` directory, kept for reference or for reproducing earlier results.
-- **Narrower background rings** (`*_background_1deg.fits`, `*_background_2deg.fits`): used only to test how the results depend on the background width. They are not in the release attachments; generate them from `*_background.fits` with `python utils/split_background.py` (run inside `research/hunt24-audit`). To use one, change the background file name for that cluster in `MANIFEST` in `config.py`, then delete the cached snapshot `data/warehouse/snapshots/{cluster}_background.parquet`. The pipeline only re-reads the FITS file when this snapshot is missing. Do the same when switching back.
+- **Narrower background rings** (`*_background_1deg.fits`, `*_background_2deg.fits`): used only to test how the results depend on the background width. They are not in the `data-v1` attachments; generate them from `*_background.fits` with `python utils/split_background.py` (run inside `research/hunt24-audit`). To use one, change the background file name for that cluster in `MANIFEST` in `config.py`, then delete the cached snapshot `data/warehouse/snapshots/{cluster}_background.parquet`. The pipeline only re-reads the FITS file when this snapshot is missing. Do the same when switching back.
 - `MANIFEST` in `config.py` also registers `.fits` files for Mel 25, Mel 111 and M13. These are not part of the current data package; you only need to prepare them yourself if you analyze those clusters.
 - File names must match the entries in `config.py`. Do not rename them.

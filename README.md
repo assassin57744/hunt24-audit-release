@@ -52,7 +52,9 @@ pip install -r requirements.txt
 
 ## Data
 
-Data files are not included in this repository (the `data/` folder is ignored by git). The data come from:
+Data files are not included in this repository (the `data/` folder is ignored by git). The ready-to-use input files are published once as attachments of the [`data-v1` release](https://github.com/assassin57744/hunt24-audit-release/releases/tag/data-v1), shared by all code releases. See `data/raw/gaia_archive/README.md` and `data/raw/vizier/README.md` for the file list and where to put each file.
+
+The data come from:
 
 - **Gaia DR3** (`gaiadr3.gaia_source`) through the Gaia Archive. Script: `research/hunt24-audit/utils/data_fetcher.py`.
 - **Reference catalogues** through VizieR. Script: `research/hunt24-audit/utils/vizier_fetcher.py`.
