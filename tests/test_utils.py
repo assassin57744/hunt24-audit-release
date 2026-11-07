@@ -5,9 +5,9 @@ import numpy as np
 from astropy.table import Table
 
 # Import the functions to test
-# Adjust the import path according to your project structure
-from decorators import astro_checkpoint
-from vot_to_parquet import votable_to_parquet
+# 项目根目录由 tests/conftest.py 加入 sys.path
+from utils.decorators import astro_checkpoint
+from utils.vot_to_parquet import votable_to_parquet
 
 class TestAstroUtils(unittest.TestCase):
 

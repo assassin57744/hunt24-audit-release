@@ -1,7 +1,4 @@
-from astropy.io import fits
-from astropy.coordinates import SkyCoord
-import astropy.units as u
-import numpy as np
+# 在 research/hunt24-audit 目录下运行: python drawCSV.py
 from astropy.io import fits
 from astropy.coordinates import SkyCoord
 import astropy.units as u
@@ -292,7 +289,7 @@ plt.gca().invert_xaxis()
 plt.tight_layout()
 
 plt.savefig(
-    r"./research/hunt24-audit/analysis/fieldbg.png",
+    r"./analysis/fieldbg.png",
     dpi=300,
     bbox_inches="tight"
 )

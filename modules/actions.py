@@ -328,3 +328,21 @@ class AlnActions:
         db.register_view_from_sql(v_dest, query)
 
         logger.info(f"[{k_ref}] ALN: Geometry pass-through to {v_dest}.")
+
+
+# =================================================================
+# 动作解析：config.MANIFEST 中以 "类名.方法名" 字符串引用上面的动作
+# =================================================================
+_ACTION_CLASSES = {"StdActions": StdActions, "StxActions": StxActions, "AlnActions": AlnActions}
+
+
+def resolve_action(ref):
+    """把 "StdActions.std_mapping" 形式的引用解析为可调用对象；已是可调用对象则原样返回。"""
+    if callable(ref):
+        return ref
+    cls_name, _, meth_name = str(ref).partition(".")
+    cls = _ACTION_CLASSES.get(cls_name)
+    func = getattr(cls, meth_name, None) if cls is not None else None
+    if not callable(func):
+        raise ValueError(f"未知的 MANIFEST 动作引用: {ref!r}")
+    return func

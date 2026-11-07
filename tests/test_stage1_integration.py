@@ -30,7 +30,7 @@ import numpy as np
 import pandas as pd
 import config  # 导入你的标准配置文件
 
-from modules.cluster_seed_extractor import ClusterSeedExtractor
+from modules.seed_extractor import ClusterSeedExtractor
 from modules.membership.disambiguation.bayesian import BayesianGmmDisambiguation
 
 # 配置控制台输出日志
@@ -71,9 +71,7 @@ def run_stage1_pipeline_test(cluster_key: str):
     
     # 0. 捞取原始配置 Profile
     profile = config.CLUSTERS.get(cluster_key)
-    if not profile:
-        logger.error(f"❌ config.py 中未发现星团 [{cluster_key}] 的配置，跳过测试。")
-        return
+    assert profile, f"❌ config.py 中未发现星团 [{cluster_key}] 的配置"
     
     # 提取参与计算的特征列 (此处模拟 3D 相空间：pmra, pmdec, plx)
     features = ["pmra", "pmdec", "plx"] 
@@ -86,13 +84,11 @@ def run_stage1_pipeline_test(cluster_key: str):
     extractor = ClusterSeedExtractor(cluster_profile=profile)
     
     # 执行种子出库
-    df_seeds = extractor.extract_seeds(field_stars_df=df_all_sky, features=features)
+    df_seeds = extractor.extract_seeds(seed_field_df=df_all_sky, features=features)
     
     logger.info(f"📊 粗筛出库验证: 原始靶场星数={len(df_all_sky)} | 析出种子星数={len(df_seeds)}")
-    if len(df_seeds) == 0:
-        logger.error("💥 测试失败：前置种子库干涸，未能析出凝聚核心！")
-        return
-        
+    assert len(df_seeds) > 0, "💥 前置种子库干涸，未能析出凝聚核心！"
+
     assert "cluster_label" in df_seeds.columns, "❌ 错误：输出种子 DataFrame 缺少 'cluster_label' 列！"
 
     # --------------------------------==================--------------------------------
@@ -127,6 +123,10 @@ def run_stage1_pipeline_test(cluster_key: str):
     high_prob_count = len(df_final_probs[df_final_probs["prob"] > 0.5])
     logger.info(f"🎉 [{cluster_key}] 链路集成测试 100% 通过！")
     logger.info(f"📈 结果摘要: 最终判定高概率成员星（prob > 0.5）共计: {high_prob_count} 颗。")
+
+
+def test_stage1_m45():
+    run_stage1_pipeline_test("M45")
 
 
 if __name__ == "__main__":

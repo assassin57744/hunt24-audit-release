@@ -4,8 +4,8 @@ from pathlib import Path
 from typing import TypedDict, Dict, Any
 import numpy as np
 
-# 内部模块导入
-from modules.actions import StdActions, StxActions, AlnActions
+# 注意：config 不导入任何项目模块。MANIFEST 中的 "actions" 以字符串引用
+# modules/actions.py 中的动作 ("类名.方法名")，由 modules.actions.resolve_action 在运行时解析。
 
 
 # =================================================================
@@ -770,9 +770,9 @@ def _make_gaia_entry(idx, file_pattern, fields=FIELDS_GAIA_ARCHIVE, pre_filters=
         "fields": fields,
         "pre_filters": pre_filters or [],
         "actions": {
-            "std": StdActions.std_mapping,
-            "stx": StxActions.pass_through,
-            "aln": AlnActions.pass_through,
+            "std": "StdActions.std_mapping",
+            "stx": "StxActions.pass_through",
+            "aln": "AlnActions.pass_through",
         },
     }
 
@@ -808,9 +808,9 @@ def _make_seed_entry(idx, base_idx, with_pm=False, pre_filters=None, fields=FIEL
         "fields": fields,  # 种子视图必须与基础字段表的列映射保持一致
         "pre_filters": pre_filters,
         "actions": {
-            "std": StdActions.std_mapping,
-            "stx": StxActions.pass_through,
-            "aln": AlnActions.pass_through,
+            "std": "StdActions.std_mapping",
+            "stx": "StxActions.pass_through",
+            "aln": "AlnActions.pass_through",
         },
     }
 
@@ -821,7 +821,7 @@ def _make_catalog_entry(
     remote_cat=None,
     remote_tab="members",
     pre_filters=None,
-    stx=StxActions.pass_through,
+    stx="StxActions.pass_through",
     use_ex_aln=True,
     **extra_params
 ):
@@ -847,9 +847,9 @@ def _make_catalog_entry(
         "params": params,
         "fields": fields,
         "actions": {
-            "std": StdActions.std_mapping,
+            "std": "StdActions.std_mapping",
             "stx": stx,
-            "aln": AlnActions.pass_through,
+            "aln": "AlnActions.pass_through",
         },
     }
     if use_ex_aln:
@@ -986,9 +986,9 @@ MANIFEST = {
         },
         "fields": {"id": "dr3_source_id", "id_dr2": "dr2_source_id"},
         "actions": {
-            "std": StdActions.std_mapping,
-            "stx": StxActions.pass_through,
-            "aln": AlnActions.pass_through,
+            "std": "StdActions.std_mapping",
+            "stx": "StxActions.pass_through",
+            "aln": "AlnActions.pass_through",
         },
     },
     IDX_IDS_SIMBAD: {
@@ -1074,7 +1074,7 @@ MANIFEST = {
             "cluster": "Cluster",
         },
         remote_cat="J/A+A/633/A99",
-        stx=StxActions.bridge_dr2_to_dr3,
+        stx="StxActions.bridge_dr2_to_dr3",
         pre_filters=["cluster = '{CAT_NAME}'"],
     ),
     IDX_HEYL: _make_catalog_entry(
@@ -1092,7 +1092,7 @@ MANIFEST = {
         },
         remote_cat="J/ApJ/926/132",
         remote_tab="table4",
-        stx=StxActions.fill_prob,
+        stx="StxActions.fill_prob",
     ),
 }
 

@@ -89,7 +89,7 @@ def generate_synthetic_gaia_field() -> tuple[pd.DataFrame, pd.DataFrame]:
     return df_all, df_seeds
 
 
-def run_pipeline_integration():
+def test_all_strategies():
     """执行三大精筛算子全链路测试演练"""
     logger.info("🎬 开始执行精筛解超空间全策略集成测试流水线...\n" + "="*70)
     
@@ -151,4 +151,4 @@ def run_pipeline_integration():
 
 
 if __name__ == "__main__":
-    run_pipeline_integration()
+    test_all_strategies()

@@ -7,6 +7,7 @@ from sklearn.decomposition import PCA
 
 from utils.decorators import astro_checkpoint
 
+from modules.actions import resolve_action
 from modules.db import AstroDB
 from modules.pg_core import PriorGMM
 from modules.validator import UnifiedMemberValidator
@@ -327,7 +328,7 @@ class AstroWorkflow:
         for layer in ["std", "stx", "aln"]:
             if layer in actions:
                 self.logger.debug(f"  ∟ [Process] 正在执行层级动作: {layer.upper()}")
-                action_func = actions[layer]
+                action_func = resolve_action(actions[layer])
                 action_func(self.db, idx_data, cfg_data, self.manifest, local_ctx)
 
     # ── 特征工程 ──
