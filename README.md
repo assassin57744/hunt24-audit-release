@@ -29,14 +29,16 @@ The results are then cross-matched with the reference catalogue. Stars found by 
 ## Repository structure
 
 ```
-research/hunt24-audit/
+hunt24-audit/
     main.py              command-line entry point
     config.py            paths and per-cluster parameters
     modules/             pipeline stages (seeds, GMM, validation, audit, reports)
     modules/pyUPMASK/    modified copy of pyUPMASK (GPL-3.0)
     utils/               data download and helper scripts
     tests/               tests
-tools/                   standalone query scripts
+    diffparam.py         one-off plot: M44 results for different seed parameters
+    drawCSV.py           one-off plot: M45 wide field and background ring
+    errormag.py          one-off plot: M67 parallax error vs. G magnitude
 ```
 
 ## Requirements
@@ -61,6 +63,13 @@ Example (run inside `research/hunt24-audit`):
 ```
 python -c "from utils.data_fetcher import GaiaDataFetcher; GaiaDataFetcher().fetch_cluster('M45')"
 python utils/vizier_fetcher.py
+```
+
+Each cluster has a background field: a ring 3° wide just outside the wide field. To test how the results depend on the background, `utils/split_background.py` cuts this ring into narrower rings (1° and 2° wide by default) and saves them as `gaiadr3_{cluster}_background_{1,2}deg.fits` next to the original file:
+
+```
+python utils/split_background.py                 # all clusters, 1° and 2°
+python utils/split_background.py m45 --widths 1.5
 ```
 
 Logging in to the Gaia Archive is optional. It gives a larger quota. To log in, set the environment variables `GAIA_USER` and `GAIA_PWD`. Never write credentials into the code.
